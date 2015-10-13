@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Share-it Options</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<style>
+	.summary{
+		font-weight: bold;
+		color: #333333;
+		letter-spacing: 120%;
+		font-size: 110%;
+	}
+	.instructions{
+		font-style: italic;
+	}
+	#menu{}
+	#menu li{
+		list-style-type: none;
+		font-size: 130%;
+	}
+	.green{color:green;}
+	.red{color:red;}
+	.media{
+		font-size: 75%;
+	}
+	.media-heading{
+		font-size: 95%;
+		font-weight: bold;
+		letter-spacing: 125%;
+	}
+	.media-object{
+		width: 45px;
+		height: 45px;
+	}
+	</style>
+    <script type="text/javascript" src="options.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="col-md-12">
+<div class="page-header">
+  <img src="peopleicon128.png" class = "media-object pull-left"></img><h1>Share-it Options <small>Choose the menu items you like to appear in the Share-it context menu</small></h1>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-3">
+<p>
+<p>Share-it Extension created and maintained by <a href="http://timothytocci.com/" target="_new">Timothy Tocci</a>
+<p>For other add-ons not hosted in the Chrome store you can try my<a href="https://s3.amazonaws.com/timothytocci/index.html" target="_new"> repository. </a>
+</div>
+ <div class="col-md-4">
+ <p><span class="instructions">Menu items will be shown in selected order from top to bottom. </span></p>
+<ul id="menu"  ></ul>
+<div class="summary alert alert-info">Changes will take place the next time you start your browser.
+Or, if you don't want to close the browser you could uncheck and recheck the enabled box next to this extension on the 
+Extensions tab page.<br>
+</div>
+<a class="extensions" href="chrome://chrome-urls/">Complete list of internal URLs for Google Chrome (<span class="media">right click and "Open link in new tab"</span>)</a>
+Try chrome://memory 
+to see how much memory space is taken by these extensions. (I try to keep them as lean as possible)
+</div>
+
+<div class="col-md-5">
+<center><img src="ChromeWebStore_Badge_v2_206x58.png" alt=""></center>
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/analyze-it/ghhobofceahbdeepjnkclgccbkcfnhfm" target="_new">
+    <img class="media-object img-thumbnail "  src="https://lh6.googleusercontent.com/SCbSVVKOmrkhAzrVtKZVuZ_BHqcUASLaZr-APy2251D5fHCnp-RXFmQu7Sb4Nu5efjLB3FUBfw=s26-h26-e365-rw"  >
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Analyze-it</h4>
+    Opens various page analytic tools - SEO, CMS, & WHOIS information for any page you visit. 
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/plurk-it/phapeaiiijjnafpcpcjcachmgdgfkkmc" target="_new">
+    <img class="media-object img-thumbnail" src="https://lh3.googleusercontent.com/wom5wypCwZRQKAfsmUapIp_Y55WxW_uZXTI-f9FIOomVZ3gh18TjoLWhnbKTxlIn8Kk4WWdq=s26-h26-e365-rw" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Plurk-it</h4>
+    Context menu for using <a href="https://plurk.com/"  target="_new">plurk.com</a>. Context menu item that plurks the current page. If text is selected provides a menu item to search plurks for the text
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/alexa-search/gaciolbdinpdmjhpmjpfimgonadhppnd?hl=en&gl=US" target="_new">
+    <img class="media-object" src="alx_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Alexa Search</h4>
+    This is an Omnibox extension that enables you to search Alexa from the browser. To use, type 'alx' & space, and a query term into the Omnibox. 
+  </div>
+</div>
+
+
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/america-online-web-search/afbhlbfjbpefeigjieickgnodmhdjjdh?hl=en&gl=US" target="_new">
+    <img class="media-object" src="aol_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">America Online Web Search</h4>
+    This is an Omnibox extension that enables you to search the web using America Online in your browser. To use, type 'aol' & space, and a query term into the Omnibox. 
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/amazon-web-search/dogkjfgamfpndpmgjmcjfelhjcpaghim?hl=en&gl=US" target="_new">
+    <img class="media-object" src="aweb_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Amazon Web Search</h4>
+    This is an Omnibox extension that enables you to search the web using Amazon Smart Search from the browser. This extension DOES NOT search the Amazon Web Services documentation. To use, type 'aws' & space, and a query term into the Omnibox. 
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/mozilla-open-directory-pr/gamablnnalcjjeicmoopcjaeeaflaimj?hl=en&gl=US" target="_new">
+    <img class="media-object" src="dmoz_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Mozilla Open Directory Project Search</h4>
+    Allows you to search the Mozilla Open Directory Project (dmoz.org) from the Omnibox. To use just type 'dmoz', a space, and your query term. It will open up a new tab with the search results of your query.
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/groups-search/donhcaknlpccdkjcibmnbagekdemifif?hl=en&gl=US" target="_new">
+    <img class="media-object" src="ggs_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Groups Search</h4>
+    Search Google Groups from the Omnibox. To use, type 'ggs' & space, and a query term into the Omnibox.
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/omgili-search/jllbgnjiffjogdmoljjljeedafbndamm?hl=en&gl=US" target="_new">
+    <img class="media-object" src="omg_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Omgili Search</h4>
+    This is an Omnibox extension that enables you to search Omgili (time sensitive message board search engine) from the browser. To use, type 'omg', a space, and query into the Omnibox. Then choose a time frame that you desire from the dropdown and it will open your results in a new tab. 
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/vimeo-search/fimpclpielikjondmhhjbkafhjpgdjpm?hl=en&gl=US" target="_new">
+    <img class="media-object" src="vim_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Vimeo Search</h4>
+    This is an Omnibox extension that enables you to search Vimeo from your browser. To use, type 'vim' & space, and a query term into the Omnibox. 
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/wikipedia-search/chekijheblihjfainmnakhfkahfhaegg?hl=en&gl=US" target="_new">
+    <img class="media-object" src="wiki_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Wikipedia Search</h4>
+    This is an Omnibox extension that enables you to search Wikipedia from the browser. To use, type 'wiki' & space, and a query term into the Omnibox. 
+  </div>
+</div>
+
+<div class="media">
+  <a class="pull-left" href="https://chrome.google.com/webstore/detail/utube-search/cnblbfjdlamjbaichidfcbeegekpjnia" target="_new">
+    <img class="media-object" src="yt_48.png" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">uTube Search</h4>
+    Omnibox Extension that allows you to search YouTube from your browser. To use, type 'yt' & space, and a query term into the Omnibox. 
+  </div>
+</div>
+
+</div>
+
+</div>
+</div>
+<!--<script src="bootstrap/js/jquery-2.1.0.min.js"></script>-->
+<!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "Share-it",
+  "description": "Adds context menu items to share the current page on a number of websites",
+  "version": "0.9",
+  "permissions": ["contextMenus"],
+  "background": {
+    "scripts": ["app.js"]
+  },
+  "options_page": "options.html",
+  "icons" : {
+		"16" : "peopleicon16.png",
+		"32" : "peopleicon32.png",
+		"48" : "peopleicon48.png",
+		"128" : "peopleicon128.png"
+	},
+  "manifest_version": 2
+}

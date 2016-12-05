@@ -39,10 +39,11 @@ var defaultentries = [
     }
 ];
 var entries = {};
-if (!localStorage.getItem("entries")) {
-    localStorage.setItem("entries", JSON.stringify(defaultentries));
+if (!localStorage.getItem("entriess")) {
+    localStorage.setItem("entriess", JSON.stringify(defaultentries));
 }
-entries = JSON.parse(localStorage.getItem("entries"));
+entries = JSON.parse(localStorage.getItem("entriess"));
+
 function isActive(menu) {
     console.log("isActive");
     var elen = entries.length;
@@ -81,7 +82,7 @@ function setInactive(menu) {
             entries[i]["active"] = 0;
         }
     }
-    localStorage.setItem("entries", JSON.stringify(entries));
+    localStorage.setItem("entriess", JSON.stringify(entries));
 }
 function openextensions() {
     console.log("openextensions");

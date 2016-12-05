@@ -139,7 +139,7 @@ if(isActive("tumblr.com")){
 	chrome.contextMenus.create({"title": "tumblr.com", "contexts":["page"], "parentId": hp, "onclick": tumblrIt});
 }
 function tumblrIt(i, t){
-	var createProperties = {url: "http://www.tumblr.com/share?v=3&u="+ encodeURI(t.url) + "&t=" + encodeURIComponent(t.title)};
+	var createProperties = {url: "http://www.tumblr.com/share/link?url="+ encodeURI(t.url)};
 	chrome.tabs.create(createProperties);
 }
 

@@ -50,11 +50,12 @@ function isActive(menu) {
     for (i = 0; i < elen; i++) {
         if (entries[i]["menu"] == menu) {
             console.log(entries[i]["menu"]);
-            if (entries[i]["active"] == 1) {
+            /*if (entries[i]["active"] == 1) {
                 return true;
             } else {
                 return false;
-            }
+            }*/
+            return entries[i]["active"];
         }
     }
 }
@@ -87,6 +88,21 @@ function openextensions() {
     var createProperties = {url: "chrome://extensions/"};
     chrome.tabs.create(createProperties);
 }
+
+/**
+ * dopopup
+ * creates a popup
+ * @bug only closes properly with google for some reason
+ * @param url
+ */
+function dopopup(url){
+    var createData = {url: url, type: "popup"};
+    chrome.windows.create(createData, function callback(win){
+        // try get forwarded url and compare to original
+        //chrome.windows.remove(win.id, function(){});
+    });
+}
+
 /* Create the context menu */
 var hp = chrome.contextMenus.create({"title": "Share-it"});
 
@@ -96,6 +112,8 @@ if (isActive("facebook.com")) {
 function facebookIt(i, t) {
     var createProperties = {url: "http://www.facebook.com/sharer.php?u=" + encodeURI(t.url) + "&src=" + encodeURIComponent("Share-it")};
     chrome.tabs.create(createProperties);
+    // close bug
+    //dopopup("http://www.facebook.com/sharer.php?u=" + encodeURI(t.url) + "&src=" + encodeURIComponent("Share-it"));
 }
 
 if (isActive("twitter.com")) {
@@ -115,8 +133,9 @@ if (isActive("plus.google.com")) {
     });
 }
 function googleplusIt(i, t) {
-    var createProperties = {url: "https://plusone.google.com/_/+1/confirm?hl=en&url=" + encodeURI(t.url)};
-    chrome.tabs.create(createProperties);
+    //var createProperties = {url: "https://plusone.google.com/_/+1/confirm?hl=en&url=" + encodeURI(t.url)};
+    //chrome.tabs.create(createProperties);
+    dopopup("https://plusone.google.com/_/+1/confirm?hl=en&url=" + encodeURI(t.url));
 }
 
 if (isActive("linkedin.com")) {

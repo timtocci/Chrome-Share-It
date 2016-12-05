@@ -1,6 +1,6 @@
 {
   "name": "Share-it",
-  "description": "Adds context menu items to share the current page on a number of websites",
+  "description": "Adds context menu items to share the current page on a number of popular websites",
   "version": "1.2",
   "permissions": ["contextMenus", "tabs"],
   "background": {

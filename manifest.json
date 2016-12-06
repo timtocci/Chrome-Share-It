@@ -1,13 +1,13 @@
 {
   "name": "Share-it",
   "description": "Adds context menu items to share the current page on a number of popular websites",
-  "version": "1.3",
+  "version": "1.4",
   "permissions": [
     "contextMenus",
     "tabs"
   ],
   "background": {
-    "scripts": "app.js"
+    "scripts": ["app.js"]
   },
   "options_page": "options.html",
   "icons" : {

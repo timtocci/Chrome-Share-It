@@ -56,8 +56,10 @@ chrome.runtime.onInstalled.addListener(function (details) {
         }
         localStorage.setItem("entriess", JSON.stringify(defaultentries));
     }
-    // comment below out while debugging
-    chrome.runtime.reload();
+    var manifest = chrome.runtime.getManifest();
+    if(!details.previousVersion == manifest.version){
+        chrome.runtime.reload();
+    }
 });
 
 var entries = JSON.parse(localStorage.getItem("entriess"));

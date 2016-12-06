@@ -1,5 +1,5 @@
 /** app.js */
-console.log(chrome.runtime);
+//console.log(chrome.runtime);
 var defaultentries = [
     {
         "menu": "facebook.com",

@@ -7,7 +7,7 @@
     "tabs"
   ],
   "background": {
-    "page": "background.html"
+    "scripts": "app.js"
   },
   "options_page": "options.html",
   "icons" : {

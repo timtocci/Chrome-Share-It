@@ -38,7 +38,9 @@ var defaultentries = [
         "active": 1
     }
 ];
-
+if (!localStorage.getItem("entriess")) {
+    localStorage.setItem("entriess", JSON.stringify(defaultentries));
+}
 chrome.runtime.onInstalled.addListener(function (details) {
     if (details.reason == "update") {
         console.log("update");
@@ -57,9 +59,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
     // comment below out while debugging
     chrome.runtime.reload();
 });
-if (!localStorage.getItem("entriess")) {
-    localStorage.setItem("entriess", JSON.stringify(defaultentries));
-}
+
 var entries = JSON.parse(localStorage.getItem("entriess"));
 
 function isActive(menu) {

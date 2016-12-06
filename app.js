@@ -47,10 +47,10 @@ chrome.runtime.onInstall.addListener(function(details){
     if(details.reason == "update"){
         console.log("update");
         var localentries = JSON.parse(localStorage.getItem("entriess"));
-        for(i=0;i<defaultentries.length;i++){
-            for(j=0;j<localentries.length;j++){
+        for(var i=0;i<defaultentries.length;i++){
+            for(var j=0;j<localentries.length;j++){
                 if(defaultentries[i].menu == localentries[j].menu){
-                    if(!localentries[j].active == 1){
+                    if(!localentries[j].active){
                         defaultentries[i].active = 0;
                     }
                 }
@@ -63,8 +63,7 @@ var entries = JSON.parse(localStorage.getItem("entriess"));
 function isActive(menu) {
     console.log("isActive");
     var elen = entries.length;
-    console.assert(!elen == 0);
-    for (i = 0; i < elen; i++) {
+    for (var i = 0; i < elen; i++) {
         if (entries[i]["menu"] == menu) {
             console.log(entries[i]["menu"]);
             /*if (entries[i]["active"] == 1) {
@@ -80,8 +79,7 @@ function setActive(menu) {
     console.log("setActive");
     var elen = entries.length;
     console.log(menu);
-    console.assert(!elen == 0);
-    for (i = 0; i < elen; i++) {
+    for (var i = 0; i < elen; i++) {
         if (entries[i]["menu"] == menu) {
             entries[i]["active"] = 1;
         }
@@ -92,7 +90,6 @@ function setInactive(menu) {
     console.log("setInactive");
     var elen = entries.length;
     console.log(menu);
-    console.assert(!elen == 0);
     for (i = 0; i < elen; i++) {
         if (entries[i]["menu"] == menu) {
             entries[i]["active"] = 0;

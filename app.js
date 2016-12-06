@@ -1,5 +1,4 @@
 /** app.js */
-//console.log(chrome.runtime);
 var defaultentries = [
     {
         "menu": "facebook.com",
@@ -40,18 +39,19 @@ var defaultentries = [
     }
 ];
 
-chrome.runtime.onInstalled.addListener(function(details){
-    if(details.reason == "install"){
+chrome.runtime.onInstalled.addListener(function (details) {
+    boolInstall = true;
+    if (details.reason == "install") {
         console.log("install");
         localStorage.setItem("entriess", JSON.stringify(defaultentries));
     }
-    if(details.reason == "update"){
+    if (details.reason == "update") {
         console.log("update");
         var localentries = JSON.parse(localStorage.getItem("entriess"));
-        for(var i=0;i<defaultentries.length;i++){
-            for(var j=0;j<localentries.length;j++){
-                if(defaultentries[i].menu == localentries[j].menu){
-                    if(!localentries[j].active){
+        for (var i = 0; i < defaultentries.length; i++) {
+            for (var j = 0; j < localentries.length; j++) {
+                if (defaultentries[i].menu == localentries[j].menu) {
+                    if (!localentries[j].active) {
                         defaultentries[i].active = 0;
                     }
                 }
@@ -59,6 +59,8 @@ chrome.runtime.onInstalled.addListener(function(details){
         }
         localStorage.setItem("entriess", JSON.stringify(defaultentries));
     }
+    // comment below out while debugging
+    chrome.runtime.reload();
 });
 var entries = JSON.parse(localStorage.getItem("entriess"));
 
@@ -69,10 +71,10 @@ function isActive(menu) {
         if (entries[i]["menu"] == menu) {
             console.log(entries[i]["menu"]);
             /*if (entries[i]["active"] == 1) {
-                return true;
-            } else {
-                return false;
-            }*/
+             return true;
+             } else {
+             return false;
+             }*/
             return entries[i]["active"];
         }
     }
@@ -111,9 +113,9 @@ function openextensions() {
  * @bug only closes properly with google for some reason
  * @param url
  */
-function dopopup(url){
+function dopopup(url) {
     var createData = {url: url, type: "popup"};
-    chrome.windows.create(createData, function callback(win){
+    chrome.windows.create(createData, function callback(win) {
         // try get forwarded url and compare to original
         //chrome.windows.remove(win.id, function(){});
     });

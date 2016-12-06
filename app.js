@@ -40,11 +40,6 @@ var defaultentries = [
 ];
 
 chrome.runtime.onInstalled.addListener(function (details) {
-    boolInstall = true;
-    if (details.reason == "install") {
-        console.log("install");
-        localStorage.setItem("entriess", JSON.stringify(defaultentries));
-    }
     if (details.reason == "update") {
         console.log("update");
         var localentries = JSON.parse(localStorage.getItem("entriess"));
@@ -62,6 +57,9 @@ chrome.runtime.onInstalled.addListener(function (details) {
     // comment below out while debugging
     chrome.runtime.reload();
 });
+if (!localStorage.getItem("entriess")) {
+    localStorage.setItem("entriess", JSON.stringify(defaultentries));
+}
 var entries = JSON.parse(localStorage.getItem("entriess"));
 
 function isActive(menu) {

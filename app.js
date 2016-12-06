@@ -40,18 +40,7 @@ var defaultentries = [
     }
 ];
 
-var entries = {};
-if (!localStorage.getItem("entriess")) {
-    localStorage.setItem("entriess", JSON.stringify(defaultentries));
-}
-entries = JSON.parse(localStorage.getItem("entriess"));
-
-// racing condition?
-// Cannot read property 'addListener' of undefined
-// https://developer.chrome.com/extensions/runtime#event-onInstalled
-// https://bugs.chromium.org/p/chromium/issues/detail?id=601559
-/*
-chrome.runtime.onInstall.addListener(function(details){
+chrome.runtime.onInstalled.addListener(function(details){
     if(details.reason == "install"){
         console.log("install");
         localStorage.setItem("entriess", JSON.stringify(defaultentries));
@@ -72,7 +61,7 @@ chrome.runtime.onInstall.addListener(function(details){
     }
 });
 var entries = JSON.parse(localStorage.getItem("entriess"));
-*/
+
 function isActive(menu) {
     console.log("isActive");
     var elen = entries.length;

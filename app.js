@@ -38,12 +38,28 @@ var defaultentries = [
         "active": 1
     }
 ];
-var entries = {};
-if (!localStorage.getItem("entriess")) {
-    localStorage.setItem("entriess", JSON.stringify(defaultentries));
-}
-entries = JSON.parse(localStorage.getItem("entriess"));
 
+chrome.runtime.onInstall.addListener(function(details){
+    if(details.reason == "install"){
+        console.log("install");
+        localStorage.setItem("entriess", JSON.stringify(defaultentries));
+    }
+    if(details.reason == "update"){
+        console.log("update");
+        var localentries = JSON.parse(localStorage.getItem("entriess"));
+        for(i=0;i<defaultentries.length;i++){
+            for(j=0;j<localentries.length;j++){
+                if(defaultentries[i].menu == localentries[j].menu){
+                    if(!localentries[j].active == 1){
+                        defaultentries[i].active = 0;
+                    }
+                }
+            }
+        }
+        localStorage.setItem("entriess", JSON.stringify(defaultentries));
+    }
+});
+var entries = JSON.parse(localStorage.getItem("entriess"));
 function isActive(menu) {
     console.log("isActive");
     var elen = entries.length;

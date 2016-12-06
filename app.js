@@ -1,4 +1,5 @@
 /** app.js */
+console.log(chrome.runtime);
 var defaultentries = [
     {
         "menu": "facebook.com",
@@ -38,7 +39,15 @@ var defaultentries = [
         "active": 1
     }
 ];
-
+var entries = {};
+if (!localStorage.getItem("entriess")) {
+    localStorage.setItem("entriess", JSON.stringify(defaultentries));
+}
+entries = JSON.parse(localStorage.getItem("entriess"));
+// racing condition?
+// Cannot read property 'addListener' of undefined
+// https://developer.chrome.com/extensions/runtime#event-onInstalled
+/*
 chrome.runtime.onInstall.addListener(function(details){
     if(details.reason == "install"){
         console.log("install");
@@ -60,6 +69,7 @@ chrome.runtime.onInstall.addListener(function(details){
     }
 });
 var entries = JSON.parse(localStorage.getItem("entriess"));
+*/
 function isActive(menu) {
     console.log("isActive");
     var elen = entries.length;
